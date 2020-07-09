@@ -1,0 +1,28 @@
+<h1>RESPOSTAS</h1>
+
+<h5>Topico: {{topicoRef.titulo}}</h5>
+
+<div *ngIf="listaRespostas">
+    <table class="table">
+        <tr>
+            <th>Autor</th>
+            <th>Mensagem</th>
+        </tr>
+        <tr *ngFor="let item of listaRespostas ; let i = index">
+            <td>{{item.nomeAutor}}</td>
+            <td>{{item.mensagem}}</td>
+        </tr>
+    </table>
+</div>
+
+<form [formGroup]="form" #myForm="ngForm" (ngSubmit)="submitForm()" novalidate>
+
+    <div class="inputs">
+        <label for="mensagem">Mensagem: </label>
+        <input type="text" name="mensagem" formControlName="mensagem" placeholder="Mensagem">
+    </div>
+
+    <input [disabled]="!form.valid" type="submit" value="Criar" class="btn btn-primary botao">
+</form>
+
+<button (click)="voltar()">Voltar</button>

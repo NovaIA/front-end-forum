@@ -1,0 +1,25 @@
+<form [formGroup]="form" #myForm="ngForm" (ngSubmit)="submitForm()" novalidate>
+
+    <div>
+        <div>
+            <label for="nome">Nome: </label>
+            <input type="text" name="nome" formControlName="nome" placeholder="Nome">
+        </div>
+
+        <div>
+            <label for="email">Email: </label>
+            <input type="email" name="email" formControlName="email" placeholder="Email">
+        </div>
+
+        <div>
+            <label for="senha">Senha: </label>
+            <input input type="text" name="senha" formControlName="senha" placeholder="Senha">
+        </div>
+    </div>
+
+    <input [disabled]="!form.valid" type="submit" value="Criar" class="btn btn-primary botao">
+
+</form>
+
+
+<button class="btn btn-secondary botao" (click)="voltar()">Voltar</button>

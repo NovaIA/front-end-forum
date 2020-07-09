@@ -1,0 +1,15 @@
+<h1>TOPICOS</h1>
+
+<div *ngIf="listaTopico">
+    <table class="table">
+        <tr>
+            <th>Titulo</th>
+            <th>Mensagem</th>
+        </tr>
+        <tr *ngFor="let item of listaTopico ; let i = index" (click)="respostas(item)">
+            <td>{{item.titulo}}</td>
+            <td>{{item.mensagem}}</td>
+            <td class="detalhes" (click)="editar(item)">Detalhes</td>
+        </tr>
+    </table>
+</div>

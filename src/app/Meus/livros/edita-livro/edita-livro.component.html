@@ -1,0 +1,19 @@
+<h3>Editar Livro</h3>
+<p>{{livro.nome}}</p>
+
+<form [formGroup]="form" #myForm="ngForm" (ngSubmit)="submitForm()" novalidate>
+
+    <div class="inputs">
+        <label for="nome">Nome: </label>
+        <input type="text" name="nome" formControlName="nome" placeholder="Nome">
+    </div>
+
+    <div class="inputs">
+        <label for="categoria">Categoria: </label>
+        <input type="text" name="categoria" formControlName="categoria" placeholder="Categoria">
+    </div>
+
+    <input [disabled]="!form.valid" type="submit" value="Editar" class="btn btn-primary botao">
+</form>
+
+<button class="btn btn-secondary botao" (click)="voltar()">Voltar</button>

@@ -1,0 +1,19 @@
+<form [formGroup]="form" #myForm="ngForm" (ngSubmit)="submitForm()" novalidate>
+
+    <div>
+        <div>
+            <label for="email">Email: </label>
+            <input type="text" name="email" formControlName="email" placeholder="Email">
+        </div>
+
+        <div>
+            <label for="senha">Senha: </label>
+            <input input type="password" name="senha" formControlName="senha" placeholder="Senha">
+        </div>
+    </div>
+
+    <input [disabled]="!form.valid" type="submit" value="Login" class="btn btn-primary botao">
+
+</form>
+
+<button class="btn btn-secondary botao" (click)="criarConta()">Criar Conta</button>

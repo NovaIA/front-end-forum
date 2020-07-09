@@ -1,0 +1,15 @@
+<h1>RESPOSTAS</h1>
+
+<div *ngIf="listaRespostas">
+    <table class="table">
+        <tr>
+            <th>Autor</th>
+            <th>Mensagem</th>
+        </tr>
+        <tr *ngFor="let item of listaRespostas ; let i = index">
+            <td>{{item.nomeAutor}}</td>
+            <td>{{item.mensagem}}</td>
+            <td class="detalhes" (click)="editar(item)">Detalhes</td>
+        </tr>
+    </table>
+</div>
